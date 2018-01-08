@@ -3,17 +3,17 @@ require "functions/retangulando"
 
 require "game_modes/Precision_Arcade"
 require "game_modes/Precision_TimeAttack"
+require "game_modes/Precision_Zen10"
 
 function PrecisionMenu_load()
 	
 	stringue = ""
 	str1 = "You have three lives to\ntry make the most\npossible of correct\nresponses the faster \nthen possible for to\nget high points."
 	str2 = "You have ONLY A LIVE,\nand your objective is\nsolves the biggest \nnumber of corrects\nexpressions under the \ntime of 1min30sec."
-	--str3 = "In a lot of expressions,\nyour job is find\nwhat expression have\nhow result exactly 10.\nHurry up, because\nthe time is short."
+	str3 = "In a lot of expressions,\nyour job is find\nwhat expression have\nhow result exactly 10.\nHurry up, because\nthe time is short."
 	
 	retX = 5
-	--ret1Y, ret2Y, ret3Y = 80, 190, 300
-	ret1Y, ret2Y = 80, 190
+	ret1Y, ret2Y, ret3Y = 80, 190, 300
 	larR = 550
 	altR = 100
 	
@@ -31,7 +31,7 @@ function PrecisionMenu_load()
 	posX, imageWidth = 0, background:getWidth()
 	arcade = love.graphics.newImage("images/arcade.png")
 	timeAttack = love.graphics.newImage("images/timeattack.png")
-	--zen = love.graphics.newImage("images/zen.png")
+	zen = love.graphics.newImage("images/zen.png")
 	
 end
 
@@ -57,18 +57,17 @@ function PrecisionMenu_update(dt)
 		Precision_TimeAttack()
 	end
 	
-	--[[if play3.hit then
-		ual = true
-	end]]--
+	if play3.hit then
+		Precision_Zen10()
+	end
 	
 	-- MUDANDO O BACKGROUND E O TEXTO DE DESCRIÇÃO DEPENDENDO DE ONDE O MOUSE ESTÁ 
 	if retangulando(mouseX, mouseY, retX, ret1Y, larR, altR) then
 		stringue = str1
 	elseif retangulando(mouseX, mouseY, retX, ret2Y, larR, altR) then
 		stringue = str2
-	--[[elseif retangulando(mouseX, mouseY, retX, ret3Y, larR, altR) then
+	elseif retangulando(mouseX, mouseY, retX, ret3Y, larR, altR) then
 		stringue = str3
-	]]--
 	else
 		stringue = ""
 	end
@@ -97,9 +96,9 @@ function PrecisionMenu_draw()
 	love.graphics.print('Time Attack', 80, 195)
 	love.graphics.draw(timeAttack, 10, 205)
 	
-	--[[love.graphics.rectangle('line', retX, ret3Y, larR, altR)
+	love.graphics.rectangle('line', retX, ret3Y, larR, altR)
 	love.graphics.print('Zen 10', 80, 305)
-	love.graphics.draw(zen, 10, 315)]]--
+	love.graphics.draw(zen, 10, 315)
 	
 	love.graphics.setFont(pixel46)
 	love.graphics.rectangle('line', 657, 50, 145, 30)
@@ -113,7 +112,7 @@ function PrecisionMenu_draw()
 	
 	play1 = suit.Button("Play!", 490, 140, 65, 40)
 	play2 = suit.Button("Play! ", 490, 250, 65, 40)
-	--play3 = suit.Button("Play!  ", 490, 360, 65, 40)
+	play3 = suit.Button("Play!  ", 490, 360, 65, 40)
 	
 	suit.draw()
 	
@@ -137,4 +136,9 @@ end
 function Precision_TimeAttack()
 	gamestate = "Precision_TimeAttack"
 	Precision_TimeAttack_load()
+end
+
+function Precision_Zen10()
+	gamestate = "Precision_Zen10"
+	Precision_Zen10_load()
 end

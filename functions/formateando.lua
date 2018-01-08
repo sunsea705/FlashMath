@@ -63,7 +63,30 @@ function formateando(stringue, mode)
 		elseif tamanho == 4 then -- caso de "or"
 			positionFinal = 15
 		end
+	elseif mode == 4 then -- mode para o The Bridge
+		if tamanho == 3 then -- casos de 3+7 
+			positionFinal = 270 + extraSpace 
+		elseif tamanho == 4 then -- casos de "9+10", "-9-1"
+			positionFinal = 250 + extraSpace 
+		elseif tamanho == 5 then -- casos de "10+10", "21+21", "-4-17"
+			positionFinal = 225 + extraSpace
+		elseif tamanho == 6 then -- casos de "-10+10", "1+(-2)"
+			positionFinal = 210 + extraSpace
+		elseif tamanho == 7 then -- casos de "-1+(-1)"
+			positionFinal = 200 + extraSpace
+		elseif tamanho == 8 then -- casos de "-10+(-1)"
+			positionFinal = 180 + extraSpace			
+		elseif tamanho == 9 then -- casos de "-10+(-10)"
+			positionFinal = 155 + extraSpace
+		elseif tamanho == 10 then -- casos de "-100+(-10)
+			positionFinal = 145 - extraSpace
+		elseif tamanho == 11 then -- casos de "-100+(-100)"
+			positionFinal = 130 -- extraSpace
+		end
+	elseif mode == 5 then
+		if stringue < 0 then
+			positionFinal = "(" .. stringue.. ")"
+		end
 	end
-			
 	return positionFinal
 end
