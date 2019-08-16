@@ -1,6 +1,10 @@
 # FlashMath
 
-FlashMath - Um Breve Histórico das Versões
+FlashMath é um pequeno jogo escrito em Lua e utilizando a biblioteca Love2D. O jogo consiste em pequenos mini-jogos que servem para treinar seus conhecimentos em matemática e em lógica de programação. 
+
+Essa versão do FlashMath (sim, porque existe outra, feito em C# e usando Unity) surgiu como minha terceira nota da minha cadeira de Algoritmos I, em 2017.2. Consegui faturar um 10 com ele :)
+
+- > FlashMath - Um Breve Histórico das Versões
 
 O que há de novo? Quais os novos bugs? O que ainda falta? Confira tudo que eu fiz em cada versão do FlashMath.
 
