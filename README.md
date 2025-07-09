@@ -8,7 +8,7 @@ Essa versão do FlashMath (sim, porque existe outra, feito em C# e usando Unity)
 
 O que há de novo? Quais os novos bugs? O que ainda falta? Confira tudo que eu fiz em cada versão do FlashMath.
 
-Por Ítalo Tiago Gomes Souza
+Por Carolina Gomes Souza
 
 0.0.1
 - Primeiro modelo funcionando da ideia principal do FlashMath: gerar uma operação matemática em que o usuário deve responder corretamente para acumular pontos.
